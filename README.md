@@ -1,2 +1,2 @@
 # PlantIoT
-Automated comfort for plant
+Automated comfort for a plant

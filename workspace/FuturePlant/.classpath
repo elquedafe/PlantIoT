@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="lib/pi4j-gpio-extension.jar"/>
 	<classpathentry kind="lib" path="lib/upm_grove.jar"/>
 	<classpathentry kind="lib" path="lib/telegrambots-4.1-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="lib/raspoid-1.0-all.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

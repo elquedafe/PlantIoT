@@ -9,6 +9,7 @@ import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Properties;
 
@@ -44,7 +45,7 @@ public class ThingSpeak implements IIoTPlatform {
 	}
 
 	@Override
-	public synchronized void publishThingRepresentation(String representation) throws IoTPlatformException {
+	public synchronized void publishThingRepresentation(String representation1, String representation2) throws IoTPlatformException {
 		URL apiURL;
 
 		HttpURLConnection con;
@@ -63,8 +64,11 @@ public class ThingSpeak implements IIoTPlatform {
 			con.setRequestMethod("POST");
 			con.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
 			con.setDoOutput(true);
-
-			String urlParameters = "api_key="+writerKey+"&field1="+URLEncoder.encode(representation,"UTF-8");
+			System.out.println("JSON representation 1"+URLEncoder.encode(representation1,"UTF-8"));
+			System.out.println("JSON representation 2"+URLEncoder.encode(representation1,"UTF-8"));
+			String urlParameters = "api_key="+writerKey+"&field1="+URLEncoder.encode(representation1,"UTF-8")+"&field2="+URLEncoder.encode(representation2,"UTF-8");
+			System.out.println("PARAMS URL: "+urlParameters);
+			System.out.println("URL: "+con.getURL().getFile().toString());
 			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 			wr.writeBytes(urlParameters);
 			wr.flush();

@@ -1,3 +1,4 @@
+import bot.BotManager;
 import plant.PlantManager;
 
 
@@ -16,6 +17,8 @@ public class Main {
 	  }*/
 
 	  public static void main(String[] args) {
+		  BotManager botManager = new BotManager();
+		  botManager.run();
 		  PlantManager.run();
 	  }
 

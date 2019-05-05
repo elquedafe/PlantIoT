@@ -1,0 +1,7 @@
+on_music - Play music for plant
+off_music - Turn off music for plant
+water_plant - Water plant
+temperature - Get ambient temperature
+humidity - Get information about humidity
+luminosity - Get luminosity information
+water_level - Get water level information
